@@ -1,0 +1,27 @@
+{% extends 'skin_app/base.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br>
+    <section>
+        <div class="w-layout-blockcontainer container-9 w-container">
+            <div class="columns-2 w-row">
+                <div class="w-col w-col-7">
+                    <h1 class="heading-3">Introducing our Derma Checker, your personalized skincare companion designed
+                        to assess and enhance your skin health with expert precision</h1>
+                    <h4 class="heading-4">✓ Examine your skin concerns&nbsp;<br>✓ Uncover the secrets to radiant
+                        skin&nbsp;&nbsp;<br>✓ Strategize your skincare journey&nbsp;<br>✓ Prepare for your derma
+                        adventure</h4>
+                    <br>
+                    <div class="w-layout-blockcontainer container-10 w-container"><a href="{% url 'prediction-page' %}"
+                            class="button-2 w-button">DIAGNOSE</a></div>
+                </div>
+                <div class="w-col w-col-5"><img
+                        src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d78ee7a96c80032e6e603f_illustration-homepage.png"
+                        loading="lazy" sizes="(max-width: 767px) 96vw, 40vw"
+                        srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d78ee7a96c80032e6e603f_illustration-homepage-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d78ee7a96c80032e6e603f_illustration-homepage-p-800.png 800w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d78ee7a96c80032e6e603f_illustration-homepage.png 826w"
+                        alt="" class="image-5"></div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,651 @@
+{% extends 'skin_app/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'model_prediction/diagnose.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <style>
+        .container-6 {
+            display: flex;
+            justify-content: center; /* Center the card containers */
+            align-items: center; /* Align vertically in the center */
+            margin-top: 40px; /* Adjust margin as needed */
+        }
+
+        .card-container {
+            width: 80%; /* Adjust width as needed */
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px; /* Adjust margin as needed */
+            width: 100%;
+        }
+    </style>
+</head>
+<br><br><br>
+<body>
+<br>
+<!--    Skin Disease Class 0-->
+    {% if result == 0 %}
+        <h1 class="heading-8">
+            You have been diagnosed with acne and roseca.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>• Maintain a consistent skincare routine.
+                <br>• Avoid excessive sun exposure.
+                <br>• Keep the face clean and avoid touching it with unwashed  hands.</p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Use non-comedogenic skincare products.
+                    <br>• Consult with a dermatologist for personalized treatment plans. <br><br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 1-->
+    {% if result == 1 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Actinic Keratosis Basal Cell Carcinoma.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <h2>Precautionary actions</h2>
+                <p>
+                    • Report any suspicious skin changes to a healthcare professional.
+                    <br>• Follow prescribed treatment plans. <br><br>
+                </p>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Use sun protection, including sunscreen and protective clothing.
+                    <br>• Regularly examine the skin for any changes.
+                    <br>• Avoid prolonged exposure to UV radiation. <br><br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 2-->
+    {% if result == 2 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Atopic Dermatitis Photos.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>• Moisturize regularly to prevent dry skin.
+                    <br>• Identify and avoid triggers (e.g., certain fabrics, soaps).
+                    <br>• Use mild soaps and detergents. <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Apply prescribed topical medications.
+                    <br> • Keep the skin well-hydrated.<br><br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 3-->
+    {% if result == 3 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Bullous Disease.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>
+                    • Protect the skin from trauma and friction.
+                    <br> • Avoid known triggers.
+                    <br> • Maintain good overall health. <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Immediately report to nearest dermatologist.
+                    <br> • Follow treatment plans provided by a healthcare professional.
+                    <br> • Report any new symptoms promptly. <br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 4-->
+    {% if result == 4 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Cellulitis Impetigo and other Bacterial Infections.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>• Practice good hygiene.
+                    <br> • Keep wounds clean and covered.
+                    <br> • Avoid sharing personal items. <br><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Take prescribed antibiotics as directed.
+                    <br> • Seek medical attention for persistent or worsening symptoms. <br><br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 5-->
+    {% if result == 5 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Eczema.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>
+                    • Moisturize regularly.
+                    <br> • Identify and avoid triggers.
+                    <br> • Use gentle skincare products. <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Report to nearest dermatologist.
+                    <br> • Apply prescribed topical medications.
+                    <br> • Practice good skincare habits. <br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 6-->
+    {% if result == 6 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Exanthems and Drug Eruptions.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>
+                    • Be aware of drug allergies and inform healthcare providers.
+                    <br> • Follow medication instructions.
+                    <br> • Practice sun protection when necessary. <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Report any adverse reactions to medications promptly.
+                    <br> • Seek medical attention for severe reactions. <br><br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 7-->
+    {% if result == 7 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Herpes HPV or kind if STDs.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>
+                    • Practice safe sex.
+                    <br> • Get vaccinated against preventable STDs.
+                    <br> • Know your partner's sexual health status. <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Seek testing and treatment for STDs.
+                    <br> • Use barrier methods consistently. <br><br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 8-->
+    {% if result == 8 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Light Diseases or Disorders of Pigmentation.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>
+                    • Protect the skin from excessive sun exposure.
+                    • Avoid tanning beds.
+                    • Use sunblock and protective clothing.
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Follow dermatologist recommendations for managing pigmentation disorders.
+                    <br>  • Report any changes in skin color to a healthcare professional. <br><br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 9-->
+    {% if result == 9 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Lupus or other Connective Tissue Diseases.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>• Manage stress.
+                    <br> • Protect the skin from UV exposure.
+                    <br> • Follow a healthy lifestyle. <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Attend regular check-ups with healthcare providers.
+                    • Follow prescribed medications and treatment plans. <br><br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!--    Skin Disease Class 10-->
+    {% if result == 10 %}
+        <h1 class="heading-8">
+            You have been diagnosed with Melanoma Skin Cancer, Nevi, or Moles.
+            <br> Here's some medical advice!
+        </h1>
+        <br><br>
+        <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>
+                    • Regular skin checks
+                    <br> • Sun protection (use sunscreen, wear protective clothing)
+                    <br> • Avoid tanning beds. <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    • Surgical removal for early-stage melanoma
+                    • Treatments like chemotherapy, immunotherapy
+                    • Targeted therapy for advanced stages. <br><br>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+</div>
+<!-- Skin Disease Class 11 -->
+{% if result == 11 %}
+    <h1 class="heading-8">
+        You have been diagnosed with Poison Ivy, Photos, and Other Contact Dermatitis.
+        <br> Here's some medical advice!
+    </h1>
+    <br><br>
+    <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>•Wear protective clothing when outdoors<br>
+                    •Wash skin and clothing after contact with irritants<br>
+                    •Identify and avoid triggers<br></p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    •Topical corticosteroids, antihistamines for itching<br>
+                    •Oral steroids in severe cases<br><br>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!--    Skin Disease Class 12-->
+    {% if result == 12 %}
+    <h1 class="heading-8">
+        You have been diagnosed with Psoriasis, Lichen Planus, and Pictures.
+        <br> Here's some medical advice!
+    </h1>
+    <br><br>
+    <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>•Moisturize regularly<br>
+                    •Avoid triggers (stress, smoking, alcohol)<br>
+                    •Manage stress</p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    •Treatment: Topical corticosteroids<br> •phototherapy<br>
+                    •Oral medications (immunosuppressants, retinoids)<br>
+                    •Biologics
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!--    Skin Disease Class 13-->
+    {% if result == 13 %}
+    <h1 class="heading-8">
+        You have been diagnosed with Seborrheic Keratoses and Other Benign Tumors.
+        <br> Here's some medical advice!
+    </h1>
+    <br><br>
+    <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>•Regular skin checks<br>
+                    •Monitor changes in size, shape, or color of growths<br><br></p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    •Usually not necessary, but can be removed if causing symptoms or for cosmetic reasons (cryotherapy,
+                    curettage)<br><br><br>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!--    Skin Disease Class 14-->
+    {% if result == 14 %}
+    <h1 class="heading-8">
+        You have been diagnosed with Systemic Disease.
+        <br> Here's some medical advice!
+    </h1>
+    <br><br>
+    <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>•Manage underlying conditions (e.g., diabetes, lupus) through medication and lifestyle
+                    changes<br><br><br></p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    •Treatment varies depending on the systemic disease but may include medications<br>
+                    •Physical therapy<br>
+                    •Lifestyle modifications<br>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!--    Skin Disease Class 15-->
+    {% if result == 15 %}
+    <h1 class="heading-8">
+        You have been diagnosed with Tinea Ringworm Candidiasis and Other Fungal Infections.
+        <br> Here's some medical advice!
+    </h1>
+    <br><br>
+    <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>•Keep skin clean and dry<br>
+                    avoid sharing personal items (towels, clothing)<br>
+                    •Wear breathable fabrics<br><br></p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    •Antifungal medications (topical or oral)<br>
+                    •Maintaining good hygiene<br><br>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!--    Skin Disease Class 16-->
+    {% if result == 16 %}
+    <h1 class="heading-8">
+        You have been diagnosed with Urticaria Hives.
+        <br> Here's some medical advice!
+    </h1>
+    <br><br>
+    <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>•Identify and avoid triggers (food, medications, stress)<br>
+                    •Wear loose-fitting clothing<br><br></p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    •Antihistamines, corticosteroids in severe cases<br>
+                    •Identifying and managing underlying causes <br><br>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!--    Skin Disease Class 17-->
+    {% if result == 17 %}
+    <h1 class="heading-8">
+        You have been diagnosed with Vascular Tumors.
+        <br> Here's some medical advice!
+    </h1>
+    <br><br>
+    <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>•Regular monitoring for changes in size or appearance of the Tumor<br><br><br></p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    •Observation in many cases<br>
+                    •But may require surgical removal or other interventions depending on the type and location <br><br>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!--    Skin Disease Class 18-->
+    {% if result == 18 %}
+    <h1 class="heading-8">
+        You have been diagnosed with Vasculitis Photos.
+        <br> Here's some medical advice!
+    </h1>
+    <br><br>
+    <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>•Avoid triggers (certain medications infections)<br>
+                    •Manage underlying conditions<br><br></p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    •Corticosteroids<br>
+                    •Other Immunosuppressive medications<br>
+                    •Depending on the severity and underlying cause <br><br>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div><!--    Skin Disease Class 19-->
+    {% if result == 19 %}
+    <h1 class="heading-8">
+        You have been diagnosed with Warts Molluscum and Other Viral Infections.
+        <br> Here's some medical advice!
+    </h1>
+    <br><br>
+    <div class="container-6 w-container">
+        <div class="card-container w-layout-blockcontainer container-12 w-container">
+            <!-- Precautionary actions card -->
+            <div class="card">
+                <h2>Precautionary actions</h2>
+                <p>
+                    • Avoid direct contact with affected areas<br>
+                    • Avoid sharing personal items<br><br>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-container w-layout-blockcontainer container-13 w-container">
+            <!-- What can you do card -->
+            <div class="card">
+                <h2>What can you do?</h2>
+                <p>
+                    •Topical treatments (salicylic acid, cryotherapy)<br>
+                    •Surgical removal<br>
+                    •Antiviral medications in some cases <br><br>
+                </p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+{% endblock content %}

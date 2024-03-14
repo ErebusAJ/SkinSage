@@ -1,0 +1,149 @@
+{% extends 'skin_app/base.html' %}
+{% load static %}
+{% block content%}
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1.heading-3 {
+            text-align: center; /* Center the h1 horizontally */
+            width: 100%; /* Make the h1 full width */
+        }
+
+
+        .newsstand {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 20px;
+        }
+
+        .news-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            width: 500px;
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: scale(1.05);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .news-description {
+            color: #555;
+        }
+    </style>
+<body>
+<br><br><br><br><br>
+    <h1 class="heading-3">Newsstand</h1>
+    <div class="newsstand">
+
+        <div class="news-card">
+            <img class="news-image" src="https://www.usnews.com/object/image/00000184-5d22-d253-a784-dda799cf0000/gettyimages-1390026192.jpg?update-time=1668009859280&size=responsive640" alt="News Image">
+            <div class="news-content">
+                <a class="news-title" href="https://www.healio.com/news/dermatology/20240221/pretreatment-testing-rates-for-patients-with-skin-diseases-may-diverge-from-guidelines" target="_blank">
+                    Pretreatment testing rates for patients with skin diseases may diverge from guidelines
+                </a>
+                <p class="news-description">Data showed that not all patients with chronic inflammatory skin diseases undergo pretreatment testing before initiating systemic immunomodulatory therapies, despite current guidelines, according to a study.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img class="news-image" src="https://assets.iflscience.com/assets/articleNo/58550/aImg/34765/1611855358-eczema-m.jpg" alt="News Image">
+            <div class="news-content">
+                <a class="news-title" href="https://www.healio.com/news/dermatology/20240221/plantbased-topical-successfully-targets-both-inflammation-bacteria-in-atopic-dermatitis" target="_blank">
+                    Plant-based topical successfully targets both inflammation, bacteria in atopic dermatitis
+                </a>
+                <p class="news-description">MIAMI BEACH, Fla. — Zabalafin, a nonsteroidal topical, demonstrated efficacy in reducing inflammation and bacteria on the skin of children and adults with atopic dermatitis, according to interim data presented in a poster at Masters of Pediatric Dermatology.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img class="news-image" src="https://www.verywellhealth.com/thmb/6Ceo-Elv08ZvISUIu9vzLEhSzeM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1035538836-59a00512e9f7488184fc9ac1f989be8b.jpg" alt="News Image">
+            <div class="news-content">
+                <a class="news-title" href="https://www.healio.com/news/primary-care/20240220/healthy-teen-awakens-with-lesions-in-early-morning-hours" target="_blank">
+                    Healthy teen awakens with lesions in early morning hours
+                </a>
+                <p class="news-description">A healthy, adolescent boy is seen for recurrently awakening with pruritic, urticarial-like lesions between his upper thighs extending to his mid-thorax.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img class="news-image" src="https://www.laparoscopicvideo.com/uploads/2023/05/13/5bG3dQ2R1h_320x180.jpg" alt="News Image">
+            <div class="news-content">
+                <a class="news-title" href="https://www.healio.com/news/dermatology/20240220/when-all-else-fails-treating-hyperhidrosis-with-endoscopic-thoracic-sympathectomy" target="_blank">
+                    When all else fails: Treating hyperhidrosis with endoscopic thoracic sympathectomy
+                </a>
+                <p class="news-description">Endoscopic thoracic sympathectomy (ETS) is a procedure that is performed to correct hyperhidrosis by interrupting the transmission of nerve signals from the spinal column to the sweat glands.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img class="news-image" src="https://pharmajournalist.com/wp-content/uploads/2017/11/Almirall_Plant_Reinbek.jpg" alt="News Image">
+            <div class="news-content">
+                <a class="news-title" href="https://www.healio.com/news/dermatology/20240220/almirall-enters-license-agreement-with-novo-nordisk-to-develop-nn8828-in-dermatology" target="_blank">
+                    Almirall enters license agreement with Novo Nordisk to develop NN-8828 in dermatology
+                </a>
+                <p class="news-description">Almirall has entered into an exclusive license agreement with Novo Nordisk to develop and commercialize NN-8828 for autoimmune and inflammatory dermatological diseases, according to a company press release.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img class="news-image" src="https://cdn.sanity.io/images/0vv8moc6/dermatologytimes/2573a65a58d236ce4ddeedf8c01d4f6299219f2a-928x524.png?fit=crop&auto=format" alt="News Image">
+            <div class="news-content">
+                <a class="news-title" href="https://www.healio.com/news/dermatology/20240219/first-patient-dosed-in-phase-2a-trial-of-ax158-for-psoriasis" target="_blank">
+                    First patient dosed in phase 2a trial of AX-158 for psoriasis
+                </a>
+                <p class="news-description">The first patient has been dosed in Artax Biopharma’s phase 2a trial evaluating the safety and biomarker responses of AX-158 in a first proof-of-mechanism trial in psoriasis, the company announced in a press release.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img class="news-image" src="https://pbs.twimg.com/media/FYGEjesXwAEBKkB.jpg" alt="News Image">
+            <div class="news-content">
+                <a class="news-title" href="https://www.healio.com/news/dermatology/20240216/delgocitinib-cream-outperforms-alitretinoin-capsule-in-treating-severe-chronic-hand-eczema" target="_blank">
+                    Delgocitinib cream outperforms alitretinoin capsule in treating severe chronic hand eczema
+                </a>
+                <p class="news-description">Delgocitinib cream demonstrated superiority to alitretinoin capsules in the treatment of severe chronic hand eczema, LEO Pharma announced in a press release.</p>
+            </div>
+        </div>
+
+        <div class="news-card">
+            <img class="news-image" src="https://rendia.com/wp-content/uploads/2022/08/doctor-touching-patient-hand-for-encouragement-and-2021-09-02-03-50-29-utc-min-scaled.jpg" alt="News Image">
+            <div class="news-content">
+                <a class="news-title" href="https://www.healio.com/news/dermatology/20240209/regular-checks-gentle-products-recommended-for-aging-skin" target="_blank">
+                    Regular checks, gentle products recommended for aging skin
+                </a>
+                <p class="news-description">MIAMI BEACH, Fla. — Xerosis can be a significant issue for patients as they age and dermatology practioners should both be aware and remain vigilant with whole body checks in older patients according to a poster presentation here.</p>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+{% endblock content %}

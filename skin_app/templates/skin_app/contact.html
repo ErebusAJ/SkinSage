@@ -1,0 +1,306 @@
+{% extends 'skin_app/base.html' %}
+<!--{% load static %}-->
+{% block content %}
+<br><br><br><br><br>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Layout</title>
+    <script src="https://kit.fontawesome.com/47a3b76bcf.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .card {
+            width: 45%;
+            margin: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h1.heading-18 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .card h6 {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #4daabf;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        section {
+            text-align: center;
+            margin: 50px auto;
+            max-width: 600px;
+        }
+
+
+        .heading-19 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+
+        .w-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        label {
+            font-size: 1em;
+            margin-bottom: 5px;
+            display: block;
+            text-align: left;
+        }
+
+
+        .w-input {
+            width: 500px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+
+        #w-email-3 {
+            width: 500px;
+            height: 150px;
+
+        }
+
+
+        .submit-button {
+            padding: 12px 24px;
+            background-color: #5e8cf7;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #0f5fff;
+        }
+
+        /* Style the success and failure messages */
+        .w-form-done,
+        .w-form-fail {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        /* Hide the default form messages */
+        .w-form-done,
+        .w-form-fail {
+            display: none;
+        }
+
+        .popup{
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            color: #ffffff;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: rgba(104, 202, 255, 0.8);
+            border-radius: 30px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-container">
+        <div class="card">
+
+            <img src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5f35f925d365ba52744f4_ar.jpg"
+                loading="lazy" width="479.5" sizes="(max-width: 479px) 55vw, 100px" alt=""
+                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5f35f925d365ba52744f4_ar-p-500.jpg 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5f35f925d365ba52744f4_ar-p-800.jpg 800w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5f35f925d365ba52744f4_ar.jpg 959w"
+                class="image-9">
+            <h1 class="heading-18">Aryan Sharma</h1>
+            <h4>Frontend</h4>
+            <h6>Meet Aryan Sharma, a dynamic second-year student whose passion for learning and commitment to excellence
+                define his academic journey. Aryan brings a blend of curiosity and dedication to his studies, making
+                significant strides in his chosen field. Join us in exploring the aspirations and achievements that
+                shape Aryan's academic path, embodying the spirit of growth and ambition at every turn.</h6>
+            <a href="https://www.instagram.com/aryansharma810/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/aryansharma810" target="_blank" ><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/aryansharma810/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+        <div class="card">
+
+            <img src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5fb5d23b3dbb85c729209_aj.jpg"
+                loading="lazy" width="479.5" sizes="(max-width: 479px) 55vw, 100px" alt=""
+                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5fb5d23b3dbb85c729209_aj-p-500.jpg 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5fb5d23b3dbb85c729209_aj-p-800.jpg 800w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5fb5d23b3dbb85c729209_aj-p-1080.jpg 1080w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5fb5d23b3dbb85c729209_aj.jpg 1751w"
+                class="image-9">
+            <h1 class="heading-18">Aarya Jamwal</h1>
+            <h4>Backend</h4>
+            <h6>Introducing Aarya Jamwal, a spirited second-year student whose academic journey is marked by a
+                relentless pursuit of knowledge excellence. Aarya's enthusiasm for learning is matched only by a
+                determined work ethic, as reflected in the significant strides made within the academic realm.
+                Embark on a journey to discover the aspirations and accomplishments that exemplifying a spirit of
+                continuous growth and unwavering&nbsp;ambition.</h6>
+            <a href="https://instagram.com/aaryajamwal?igshid=NzZlODBkYWE4Ng==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/ErebusAJ" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/aarya-jamwal/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+        <div class="card">
+
+            <img src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5fb26ce64d560f93cbfa9_ak.jpg"
+                loading="lazy" width="479.5" sizes="(max-width: 479px) 100vw, 100px"
+                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5fb26ce64d560f93cbfa9_ak-p-500.jpg 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d5fb26ce64d560f93cbfa9_ak.jpg 673w"
+                class="image-9" style="border-radius: 50%; width: 150px; height: 150px;">
+            <h1 class="heading-18">Akshat Verma</h1>
+            <h4>ML Model</h4>
+            <h6>Meet Akshat Verma, an ambitious second-year student whose academic voyage is characterized by a
+                profound dedication to learning and a relentless pursuit of excellence. Akshat's journey is a
+                testament to both his inquisitive spirit and his unwavering commitment to academic achievements.
+                Join us in delving into the aspirations and milestones that shape Akshat's academic narrative,
+                embodying the essence of continual growth and resolute&nbsp;ambition.</h6>
+            <a href="https://www.instagram.com/_akshat_ak_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/Vakshat" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/akshat-verma-93b43624b?trk=contact-info" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+        <div class="card">
+
+            <img src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8d30031c2a48b6486a7a4_shreshth.jpg"
+                loading="lazy" width="479.5" sizes="(max-width: 479px) 55vw, 100px"
+                srcset="{% static 'skin_app/contact/shresth.jpg' %}"
+                class="image-9" style="border-radius: 50%; width: 150px; height: 150px;">
+            <h1 class="heading-18">Shreshth Nadda</h1>
+            <h4>Research</h4>
+            <h6>Introducing Shreshth Nadda, a dynamic second-year student whose academic expedition is defined by an
+                insatiable thirst for knowledge and an unwavering commitment to excellence. Shreshth's scholarly
+                endeavors mirror a remarkable blend of curiosity and dedication, propelling him toward significant
+                achievements. Explore the unique aspirations and accomplishments that illustrate a journey marked
+                by continual growth and steadfast ambition.</h6>
+            <a href="https://www.instagram.com/shreshthnadda" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/Shreshth2304" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/shreshth-nadda-a2594028a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+
+        <div class="card">
+
+            <img src="{% static 'skin_app/contact/div_s.jpg' %}"
+                loading="lazy" width="479.5" sizes="(max-width: 479px) 55vw, 100px"
+                srcset="{% static 'skin_app/contact/div_s.jpg' %}"
+                class="image-9" style="border-radius: 50%; width: 150px; height: 150px;">
+            <h1 class="heading-18">Dwij Kaushal</h1>
+            <h4>Data Collection</h4>
+            <h6>Introducing Dwij Kaushal, a dynamic second-year student whose academic expedition is defined by an
+                insatiable thirst for knowledge and an unwavering commitment to excellence. Dwij's scholarly
+                endeavors mirror a remarkable blend of curiosity and dedication, propelling him toward significant
+                achievements. Explore the unique aspirations and accomplishments that illustrate a journey marked
+                by continual growth and steadfast ambition.</h6>
+            <a href="https://www.instagram.com/dwij_kaushal27?igsh=MTN4dGNwcmd5Zm1jaw==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/DwijKaushal" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/dwij-kaushal-a3434328b/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <hr>
+    <section>
+        <h1 class="heading-19">Contact Us</h1>
+        <div class="w-form">
+            <!-- Combined Contact and Feedback Form -->
+            <form name="submit-to-google-sheet"
+                method="POST"
+                  action="https://script.google.com/macros/s/AKfycby4QQj7eYY6Ef39iibjEf96fdn_pseAwYqwvpzv98RumLP9YzCUFEclZIOVWhz_4B7x/exec"
+            >
+                <label for="name">Name</label>
+                <input class="w-input" maxlength="256" name="Name" data-name="Name" placeholder="" type="text" id="name"
+                    fdprocessedid="2ttyy4">
+                <label for="email">Email Address</label>
+                <input class="w-input" maxlength="256" name="Email" data-name="Email 2" placeholder="" type="email"
+                    id="email-2" required="" >
+                <label for="name">Your Feedback</label>
+                <input class="w-input" maxlength="256" name="Feedback" data-name="feedback"
+                    placeholder="Share your feedback..." type="text" id="feedback" >
+                <button type="submit" class="submit-button w-button">Submit</button>
+                <div id="submittedPopup" class="popup">
+                        <p>Submitted</p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        function showPopup() {
+            const popup = document.getElementById('submittedPopup');
+            popup.style.display = 'block';
+            popup.classList.add('show');
+
+            // Auto-hide the popup after 3 seconds (adjust this time as needed)
+            setTimeout(function () {
+                popup.classList.remove('show');
+                setTimeout(function () {
+                    popup.style.display = 'none';
+                },); // Delay the display none to allow for the fade-out effect
+            }, 1500);
+        }
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby4QQj7eYY6Ef39iibjEf96fdn_pseAwYqwvpzv98RumLP9YzCUFEclZIOVWhz_4B7x/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    console.log('Success!', response)
+                    showPopup();
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>
+{% endblock content %}

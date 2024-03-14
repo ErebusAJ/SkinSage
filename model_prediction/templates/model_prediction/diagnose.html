@@ -1,0 +1,45 @@
+{% extends 'skin_app/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link href="{% static 'model_prediction/diagnose.css' %}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <style>
+        .container-6 {
+            display: flex;
+            justify-content: center; /* Center the card containers */
+            align-items: center; /* Align vertically in the center */
+            margin-top: 40px; /* Adjust margin as needed */
+        }
+
+        .card-container {
+            width: 80%; /* Adjust width as needed */
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Adjust margin as needed */
+            width: 100%;
+        }
+    </style>
+</head>
+<br><br><br><br>
+<section>
+    <h1 class="heading-8">Let's explore and identify your health concerns together</h1>
+    <form action="/diagnose/result/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class="button-5-1 w-button" type="file" name="image" accept="image/*" required><br>
+        <input class="button-5 w-button" type="submit" value="Classify">
+    </form>
+</section>
+<section class="section-12">
+    <h2 class="heading-9">Your personal dermatologist.</h2>
+</section>
+
+<!-- Add new container for cards -->
+<br><br>
+{% endblock content %}
