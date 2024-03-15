@@ -26,6 +26,9 @@
     width: 65%; /* Adjust width as needed */
     padding: 20px;
     background-color: #fff;
+    margin-top: 40px;
+    border-radius: 8px;
+    margin-right: -140px;
 }
 
 img {

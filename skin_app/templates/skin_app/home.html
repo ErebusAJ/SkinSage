@@ -133,6 +133,122 @@
           border-bottom-left-radius: 25px;
           margin-left: 710px;
         }
+
+        [type=radio] {
+            display: none;
+        }
+
+        #slider {
+            height: 460px;
+            position: relative;
+            width: 460px;
+            transform-style: preserve-3d;
+            margin-top: -150px;
+            margin-bottom: 400px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        #slider label {
+            margin: auto;
+            width: 560px;
+            /* Adjusted width to fit slider */
+            height: 600px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        #slider img {
+            height: auto;
+            width: 100%;
+        }
+
+
+        #s1:checked~#slide4,
+        #s2:checked~#slide5,
+        #s3:checked~#slide1,
+        #s4:checked~#slide2,
+        #s5:checked~#slide3 {
+            box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
+            transform: translate3d(-30%, 0, -200px);
+        }
+
+        #s1:checked~#slide5,
+        #s2:checked~#slide1,
+        #s3:checked~#slide2,
+        #s4:checked~#slide3,
+        #s5:checked~#slide4 {
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .3), 0 2px 2px 0 rgba(0, 0, 0, .2);
+            transform: translate3d(-15%, 0, -100px);
+        }
+
+        #s1:checked~#slide1,
+        #s2:checked~#slide2,
+        #s3:checked~#slide3,
+        #s4:checked~#slide4,
+        #s5:checked~#slide5 {
+            box-shadow: 0 13px 25px 0 rgba(0, 0, 0, .3), 0 11px 7px 0 rgba(0, 0, 0, .19);
+            transform: translate3d(0, 0, 0);
+        }
+
+        #s1:checked~#slide2,
+        #s2:checked~#slide3,
+        #s3:checked~#slide4,
+        #s4:checked~#slide5,
+        #s5:checked~#slide1 {
+            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .3), 0 2px 2px 0 rgba(0, 0, 0, .2);
+            transform: translate3d(15%, 0, -100px);
+        }
+
+        #s1:checked~#slide3,
+        #s2:checked~#slide4,
+        #s3:checked~#slide5,
+        #s4:checked~#slide1,
+        #s5:checked~#slide2 {
+            box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .37);
+            transform: translate3d(30%, 0, -200px);
+
+        }
+
+        #slide1 {
+            width: 660px;
+            /* Custom width */
+            height: 600px;
+
+        }
+
+        #slide2 {
+            width: 660px;
+            /* Custom width */
+            height: 600px;
+
+        }
+
+        #slide3 {
+            width: 660px;
+            /* Custom width */
+            height: 600px;
+
+        }
+
+        #slide4 {
+            width: 660px;
+            /* Custom width */
+            height: 600px;
+
+        }
+
+        #slide5 {
+            width: 660px;
+            /* Custom width */
+            height: 600px;
+
+        }
     </style>
 </head>
 
@@ -193,26 +309,64 @@
                 all.</h1>
         </div>
     </section>
-    <section class="section-5">
-        <div class="columns w-row">
-            <section class="section-5">
-                <div id="w-node-_889bdd9e-9fdd-b521-4392-7bd9118a3ef2-5028bc7e" class="w-layout-layout wf-layout-layout">
-                    <div id="w-node-c7adc6ac-03ee-74f7-64c8-d11f0efdcac0-5028bc7e" class="w-layout-cell cell"><img src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png" loading="lazy" sizes="(max-width: 600px) 100vw, 600px" srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1)-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png 600w" alt="" class="image-6">
-                        <h3 class="heading-13">Diagnose</h3><h6 class="heading-14">SkinSage, a leading healthcare company, prioritizes accurate and thorough diagnosis in dermatological care. Leveraging cutting-edge technology and expertise, SkinSage aims to precisely identify skin conditions, enabling personalized and effective treatment plans for optimal skin health. Committed to innovation and patient well-being, SkinSage exemplifies excellence in the diagnostic approach within the healthcare industry</h6>
-                    </div>
-                    <div id="w-node-_52442f32-5d87-6ce4-44ca-aa023abecdf5-5028bc7e" class="w-layout-cell cell-2">
-                        <img src="{% static 'skin_app/appn.png' %}" class="image-7">
-                        <h3 class="heading-13">Appointment</h3>
-                        <h6 class="heading-15">SkinSage appointments offer personalized consultations with expert dermatologists. Tailored to your skin's needs, appointments provide comprehensive care and guidance, empowering you to make informed decisions for healthier skin.</h6>
-                    </div>
-                    <div id="w-node-_1e7a0543-b416-93b6-8c0a-6db11165f4c9-5028bc7e" class="w-layout-cell cell-3">
-                        <img src="{% static 'skin_app/meds.png'%}" class="image-8">
-                        <h3 class="heading-13">Medication</h3>
-                        <h6 class="heading-16">SkinSage medication plans are meticulously crafted by our dermatologists to address specific skin concerns. With a focus on effectiveness and safety, our tailored prescriptions aim to provide relief and promote skin health. Trust SkinSage for expert guidance and personalized medication plans that prioritize your skin's well-being.</h6>
-                    </div>
-                </div>
-            </section>
-            <br><br>
-        </div>
+    <section id="slider" class="section-5">
+            <input type="radio" name="slider" id="s1">
+            <input type="radio" name="slider" id="s2">
+            <input type="radio" name="slider" id="s3" checked>
+            <input type="radio" name="slider" id="s4">
+            <input type="radio" name="slider" id="s5">
+            <label for="s1" id="slide1"><img src="{% static 'skin_app/contact/Diagnose.png' %}"></label>
+            <label for="s2" id="slide2"><img src="{% static 'skin_app/contact/med.png' %}"></label>
+            <label for="s3" id="slide3"><img src="{% static 'skin_app/contact/precaution.png' %}"></label>
+            <label for="s4" id="slide4"><img src="{% static 'skin_app/contact/app.png' %}"></label>
+            <label for="s5" id="slide5"><img src="{% static 'skin_app/contact/Cure.png' %}"></label>
+
     </section>
+    <script>
+    const slides = document.querySelectorAll("input[name='slider']");
+    let currentIndex = 0; // Initialize the current slide index
+
+    // Function to show the next slide
+    function showNextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].checked = true;
+        toggleArrows(slides[currentIndex]);
+    }
+
+    // Set interval to change slides every 3 seconds
+    const intervalId = setInterval(showNextSlide, 5000);
+
+    // Stop interval when user interacts with the slider
+    document.getElementById('slider').addEventListener('click', function() {
+        clearInterval(intervalId);
+    });
+
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
+
+    prevButton.addEventListener("click", function () {
+        const currentSlide = document.querySelector("input[name=slider]:checked");
+        const previousSlide = currentSlide.previousElementSibling || currentSlide.parentNode.lastElementChild;
+        previousSlide.checked = true;
+        toggleArrows(previousSlide);
+    });
+
+    nextButton.addEventListener("click", function () {
+        const currentSlide = document.querySelector("input[name=slider]:checked");
+        const nextSlide = currentSlide.nextElementSibling || currentSlide.parentNode.firstElementChild;
+        nextSlide.checked = true;
+        toggleArrows(nextSlide);
+    });
+
+    function toggleArrows(slide) {
+        const isFirstSlide = slide.id === "s1";
+        const isLastSlide = slide.id === "s5";
+        prevButton.style.display = isFirstSlide ? "none" : "block";
+        nextButton.style.display = isLastSlide ? "none" : "block";
+    }
+
+    // Initial toggle
+    toggleArrows(document.querySelector("input[name=slider]:checked"));
+</script>
+
 {% endblock content %}

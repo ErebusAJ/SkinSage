@@ -55,58 +55,114 @@
 <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"-->
 <!--    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"-->
 <!--    crossorigin="anonymous"></script>-->
-<head>
-    <link href="{% static 'users/card.css' %}" rel="stylesheet" type="text/css">
-</head>
+<!--    <link href="{% static 'users/card.css' %}" rel="stylesheet" type="text/css">-->
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1.heading-3 {
+            text-align: center; /* Center the h1 horizontally */
+            width: 100%; /* Make the h1 full width */
+        }
+
+
+        .newsstand {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 20px;
+            padding-left: 200px;
+        }
+
+        .news-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            overflow: hidden;
+            width: 500px;
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: scale(1.05);
+        }
+
+        .news-image {
+            width: 100px;
+            border-radius: 50px;
+            margin: 20px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-left: 217px;
+            margin-top: -135px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .news-description {
+            margin-top: 60px;
+            color: #555;
+        }
+        .news-description-1 {
+            margin-top: 10px;
+            color: #555;
+        }
+        .sad-1{
+            color: #ffffff;
+            background-color: #68caff;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .sad-2{
+            color: #ffffff;
+            margin-left: 80%;
+            background-color: #68caff;
+            border-radius: 10px;
+            padding: 5px;
+            width: 100px;
+        }
+    </style>
 <body>
-<br><br><br><br>
-<h2>Select Doctor</h2>
-    <form method="post" action="{% url 'doctor' %}">
+<br><br><br><br><br>
+    <h1 class="heading-3">Doctors</h1>
+    <form method="post" action="{% url 'doctor' %}" style="margin-left:90%;">
         {% csrf_token %}
         {{ location_form.as_p }}
-        <button type="submit">Filter Doctors</button>
+        <button type="submit" class="sad-1">Filter Doctors</button>
     </form>
-{% for doctor in doctors %}
-<section class="section-17">
-        <div class="w-layout-hflex flex-block">
-            <div class="w-layout-blockcontainer container-17 w-container"><img
-                    src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d6cf2a5391824218cdc22d_kimjon.jpg"
-                    loading="lazy" width="90" height="90" alt=""
-                    srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d6cf2a5391824218cdc22d_kimjon-p-500.jpg 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d6cf2a5391824218cdc22d_kimjon.jpg 720w"
-                    sizes="90px" class="image-11">
-                <h5 class="heading-24">{{ doctor.name }}</h5>
-                <h5 class="heading-25">{{ doctor.qualification }}</h5>
-                <h5 class="heading-26">{{ doctor.location }}</h5>
-                <hr style="opacity: 0.7;">
-                <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
-                    class="w-tabs">
-                    <div class="tabs-menu-2 w-tab-menu" role="tablist"><a data-w-tab="Tab 1"
-                            data-w-id="05f5c474-9aa5-ee0a-4aa8-82cbfebdbd01"
-                            class="tab-link-tab-1 w-inline-block w-tab-link w--current" id="w-tabs-0-data-w-tab-0"
-                            href="#w-tabs-0-data-w-pane-0" role="tab" aria-controls="w-tabs-0-data-w-pane-0"
-                            aria-selected="true" style="color: rgb(104, 202, 255);">
-                            <div class="text-block-7">SPECIALIZATION</div>
-                        </a><a data-w-tab="Tab 2" data-w-id="05f5c474-9aa5-ee0a-4aa8-82cbfebdbd04"
-                            class="tab-link-tab-2-2 w-inline-block w-tab-link" id="w-tabs-0-data-w-tab-1"
-                            href="#w-tabs-0-data-w-pane-1" role="tab" aria-controls="w-tabs-0-data-w-pane-1"
-                            aria-selected="false" tabindex="-1" style="color: rgb(0, 0, 0);">
-                            <div class="text-block-8">QUALIFICATIONS</div>
-                        </a></div>
-                    <div class="w-tab-content">
-                        <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active" id="w-tabs-0-data-w-pane-0"
-                            role="tabpanel" aria-labelledby="w-tabs-0-data-w-tab-0"
-                            style="opacity: 1; transition: opacity 300ms ease 0s;">
-                            <h4 class="heading-29">Expertise</h4>
-                        </div>
-                        <div data-w-tab="Tab 2" class="w-tab-pane" id="w-tabs-0-data-w-pane-1" role="tabpanel"
-                            aria-labelledby="w-tabs-0-data-w-tab-1" style="">
-                            <h4 class="heading-30">Qualification</h4>
-                        </div>
-                    </div>
-                </div><a href="#" class="button-11 w-button">Meet the Doctor</a>
+    {% for doctor in doctors    %}
+    <div id="newsContainer" class="newsstand">
+        <div class="news-card">
+            <img class="news-image" src="{{ doctor.image.url }}">
+            <div class="news-content">
+                <h3 class="news-title">{{ doctor.name }}</h3>
+                <p class="news-description">{{ doctor.qualification }}</p>
+                <p class="news-description-1">{{ doctor.speciality }}</p>
+                <button type="submit" class="sad-2">
+                    <a href="{% url 'booking' %}?doctor_id={{ doctor.id }}">Book</a>
+                </button>
             </div>
         </div>
-    </section>
-{% endfor %}
+    </div>
+    {% endfor %}
+    <script>
+        function updateDoctors() {
+            var selectedLocation = document.getElementById('id_location').value;
+            window.location.href = '/doctors/?location=' + selectedLocation;
+        }
+    </script>
 </body>
 {% endblock content %}

@@ -3,21 +3,112 @@
 {% block content %}
 <head>
     <link rel="stylesheet" href="{% static 'users/appointment.css' %}">
+    <script src="https://kit.fontawesome.com/47a3b76bcf.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1.heading-3 {
+            text-align: center; /* Center the h1 horizontally */
+            width: 100%; /* Make the h1 full width */
+        }
+
+
+        .newsstand {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 20px;
+            padding-left: 200px;
+        }
+
+        .news-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            margin-left: -500px;
+            overflow: hidden;
+            width: 500px;
+            height: 350px;
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: scale(1.05);
+        }
+
+        .news-image {
+            width: 100px;
+            border-radius: 50px;
+            margin: 20px;
+            margin-left: 40%;
+            margin-top: 11px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            margin-top: 80px;
+            padding: 20px;
+        }
+
+        .news-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-left: 125px;
+            margin-top: -85px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .news-description {
+            margin-top: 15px;
+            color: #555;
+        }
+        .news-description-1 {
+            margin-top: 10px;
+            color: #555;
+        }
+        .sad-1{
+            color: #ffffff;
+            background-color: #68caff;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .sad-2{
+            color: #ffffff;
+            margin-left: 80%;
+            background-color: #68caff;
+            border-radius: 10px;
+            padding: 5px;
+            width: 100px;
+        }
+    </style>
 </head>
 <br><br><br><br>
 <body>
     <div class="container">
-        <div class="left-box">
-            <img src="{% static 'images/doctor_profile_pic.jpg' %}" alt="Doctor Profile Pic">
-            <h2>{{ doctor.name }}</h2>
-            <p>{{ doctor.degree }}</p>
+        <br><br>
+        <div class="newsstand">
+            <div class="news-card">
+                <img class="news-image" src="{{ doctor.image.url }}">
+                <div class="news-content">
+                    <h3 class="news-title">{{ doctor.name }}</h3>
+                    <p class="news-description-1">{{ doctor.speciality }}</p>
+                    <p class="news-description"><i class="fa-solid fa-location-dot"></i> {{ doctor.address }}</p>
+                </div>
+            </div>
         </div>
         <div class="right-box">
             <h2>Book Appointment</h2>
             <form id="appointmentForm" method="post" action="{% url 'booking' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <label for="id_time">Time:</label>
+                <label for="id_time"></label>
                 <div id="timeSlots">
                     {% for time_slot in available_time_slots %}
                         <button type="button" class="timeSlot">{{ time_slot }}</button>

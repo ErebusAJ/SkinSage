@@ -1,19 +1,27 @@
 .section-17 {
 
     border-top: 1px solid rgba(132, 132, 132, .75);
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
 }
 
 .flex-block {
     width: 300px;
     height: 325px;
     margin-top: 140px;
-    margin-left: 20px;
+    margin-left: 30px;
     box-shadow: 10px 11px 12px rgba(85, 84, 84, .2);
 }
+
+
 
 .container-17 {
     width: 300px;
     height: 300px;
+    margin-left: 30px;
 }
 
 .w-container {
@@ -219,6 +227,8 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+
+
 
 .tab-link-tab-2.w--current {
     background-color: #fff;
