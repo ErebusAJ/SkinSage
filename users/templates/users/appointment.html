@@ -1,0 +1,17 @@
+{% extends 'skin_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>Your Appointments</h2>
+    {% if appointments %}
+        <ul>
+            {% for appointment in appointments reversed %}
+                <li>
+                    {{ appointment.doctor }} - {{ appointment.appointment_date }} - {{ appointment.additional_info}}
+                    <!-- Add other appointment details as needed -->
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No appointments found.</p>
+    {% endif %}
+{% endblock content %}

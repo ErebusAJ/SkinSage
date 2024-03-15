@@ -30,6 +30,7 @@
 <br><br><br>
 <body>
 <br>
+<div>
 <!--    Skin Disease Class 0-->
     {% if result == 0 %}
         <h1 class="heading-8">
@@ -646,6 +647,11 @@
         </div>
         {% endif %}
     </div>
-
+</div>
+<div>
+    <button class="button-5 w-button">
+        <a href="{% url 'doctor' %}">Book Appointment</a>
+    </button>
+</div>
 </body>
 {% endblock content %}

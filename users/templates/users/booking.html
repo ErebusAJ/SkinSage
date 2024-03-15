@@ -1,0 +1,43 @@
+{% extends 'skin_app/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'users/appointment.css' %}">
+</head>
+<br><br><br><br>
+<body>
+    <div class="container">
+        <div class="left-box">
+            <img src="{% static 'images/doctor_profile_pic.jpg' %}" alt="Doctor Profile Pic">
+            <h2>{{ doctor.name }}</h2>
+            <p>{{ doctor.degree }}</p>
+        </div>
+        <div class="right-box">
+            <h2>Book Appointment</h2>
+            <form id="appointmentForm" method="post" action="{% url 'booking' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <label for="id_time">Time:</label>
+                <div id="timeSlots">
+                    {% for time_slot in available_time_slots %}
+                        <button type="button" class="timeSlot">{{ time_slot }}</button>
+                    {% endfor %}
+                </div>
+                <button type="submit">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const timeSlots = document.querySelectorAll('.timeSlot');
+            timeSlots.forEach(function(slot) {
+                slot.addEventListener('click', function() {
+                    const selectedTime = this.textContent;
+                    document.getElementById('id_time').value = selectedTime;
+                });
+            });
+        });
+    </script>
+</body>
+{% endblock content%}

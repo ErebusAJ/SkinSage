@@ -64,8 +64,20 @@
     <div class="card-container w-layout-blockcontainer container-12 w-container">
         <div class="card">
             <h2>Diagnostic history</h2>
-            <p>Diagnostic history content goes here.</p>
-            <button type="button" class="btn btn-outline-info">Coming Soon...</button>
+<!--            <p>Diagnostic history: </p>-->
+<!--            <button type="button" class="btn btn-outline-info">Coming Soon...</button>-->
+            {% if appointments %}
+                    <ul>
+                        {% for appointment in appointments reversed %}
+                            <li>
+                                {{ appointment.doctor }} - {{ appointment.date }} - {{ appointment.additional_info}}
+                                <!-- Add other appointment details as needed -->
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No appointments found.</p>
+                {% endif %}
         </div>
     </div>
 
