@@ -60,7 +60,7 @@
 <body>
 <br><br><br><br><br>
     <h1 class="heading-3">Newsstand</h1>
-    <div class="newsstand">
+    <div id="newsContainer" class="newsstand">
 
         <div class="news-card">
             <img class="news-image" src="https://www.usnews.com/object/image/00000184-5d22-d253-a784-dda799cf0000/gettyimages-1390026192.jpg?update-time=1668009859280&size=responsive640" alt="News Image">
@@ -144,6 +144,24 @@
 
 
     </div>
+<script>
+        // Shuffle the news cards randomly
+        window.addEventListener('DOMContentLoaded', function() {
+            const newsContainer = document.getElementById('newsContainer');
+            const newsCards = Array.from(newsContainer.querySelectorAll('.news-card'));
+            shuffleArray(newsCards);
+            newsContainer.innerHTML = '';
+            newsCards.forEach(card => newsContainer.appendChild(card));
+        });
+
+        // Function to shuffle an array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+    </script>
 </body>
 
 {% endblock content %}

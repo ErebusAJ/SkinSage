@@ -1,0 +1,258 @@
+.section-17 {
+
+    border-top: 1px solid rgba(132, 132, 132, .75);
+}
+
+.flex-block {
+    width: 300px;
+    height: 325px;
+    margin-top: 140px;
+    margin-left: 20px;
+    box-shadow: 10px 11px 12px rgba(85, 84, 84, .2);
+}
+
+.container-17 {
+    width: 300px;
+    height: 300px;
+}
+
+.w-container {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.w-container:before,
+.w-container:after {
+    content: " ";
+    grid-area: 1 / 1 / 2 / 2;
+    display: table;
+}
+
+.w-container:after {
+    clear: both;
+}
+
+.w-container .w-row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.heading-24 {
+    width: 160px;
+    margin-top: -85px;
+    margin-left: 140px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 25px;
+}
+
+.heading-25 {
+    margin-top: 10 px;
+    margin-left: 140px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.heading-26 {
+    margin-top: 10px;
+    margin-left: 140px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.w-tabs {
+    position: relative;
+}
+
+.w-tabs:before,
+.w-tabs:after {
+    content: " ";
+    grid-area: 1 / 1 / 2 / 2;
+    display: table;
+}
+
+.w-tabs:after {
+    clear: both;
+}
+
+.w-tab-menu {
+    position: relative;
+}
+
+.w-tab-link {
+    vertical-align: top;
+    text-align: left;
+    cursor: pointer;
+    color: #222;
+    background-color: #ddd;
+    padding: 9px 10px;
+    text-decoration: none;
+    width: 70px;
+    display: inline-block;
+    position: relative;
+}
+
+.w-tab-link.w--current {
+    background-color: #ffffff;
+}
+
+.w-tab-link:focus {
+    outline: 0;
+}
+
+.w-tab-content {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.w-tab-pane {
+    display: none;
+    position: relative;
+}
+
+.w--tab-active {
+    display: block;
+}
+
+@media screen and (max-width: 479px) {
+    .w-tab-link {
+        display: block;
+    }
+}
+
+.w-ix-emptyfix:after {
+    content: "";
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.image-11 {
+    outline-offset: 0px;
+    border-radius: 80px;
+    outline: 3px #1a1b1f;
+    margin: 0 10px 10px;
+    transition: opacity .2s;
+    box-shadow: 3px 2px 5px rgba(0, 0, 0, .2);
+}
+
+.text-block-7,
+.text-block-8 {
+    font-size: 12px;
+}
+
+.w-inline-block {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.w-tab-link {
+    vertical-align: top;
+    text-align: left;
+    cursor: pointer;
+    color: #222;
+    background-color: #ffffff;
+    padding: 9px 30px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.w-tab-link.w--current {
+    background-color: #ffffff;
+}
+
+.w-tab-link:focus {
+    outline: 0;
+}
+
+.w-nav-link.w--current {
+    color: #0082f3;
+}
+
+.w-tab-link.w--current {
+    background-color: #ffffff;
+}
+
+.logo-link.w--current {
+    color: #000;
+    border-radius: 1px;
+    flex: 0 auto;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 30px;
+}
+
+.navigation-item.w--current {
+    opacity: 1;
+    color: #1a1b1f;
+    font-weight: 600;
+}
+
+.navigation-item.w--current:hover {
+    opacity: .8;
+    color: #32343a;
+}
+
+.navigation-item.w--current:active {
+    opacity: .7;
+    color: #32343a;
+}
+
+.detail-header-image.w--current {
+    margin-bottom: 60px;
+}
+
+.tab-link-tab-3.w--current {
+    width: 130px;
+    background-color: #fff;
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tab-link-tab-2.w--current {
+    background-color: #fff;
+    margin-top: -46px;
+    margin-left: 140px;
+    text-decoration: none;
+}
+
+.tab-link-tab-2-2.w--current {
+    background-color: #fff;
+}
+
+.logo-link.w--current {
+    flex: 1;
+}
+
+.button-11 {
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 0;
+    margin-left: 60px;
+    padding-top: 10px;
+}
+
+.w-button {
+    color: #fff;
+    line-height: inherit;
+    cursor: pointer;
+    background-color: #3898ec;
+    border: 0;
+    border-radius: 20px;
+    padding: 9px 15px;
+    margin-top: 43px;
+    margin-left: 70px;
+    text-decoration: none;
+    display: inline-block;
+}

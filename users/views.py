@@ -85,7 +85,8 @@ def book_appointment(request):
             appointment = form.save(commit=False)
             appointment.user = request.user
             appointment.save()
-            # return redirect('users/appointment_list')
+            messages.success(request, f'Your appointment has been booked')
+            return redirect('profile')
     else:
         form = AppointmentForm()
 
