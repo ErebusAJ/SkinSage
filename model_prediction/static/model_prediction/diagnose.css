@@ -581,7 +581,7 @@ figcaption {
   outline: 1px solid #fff;
   justify-content: center;
   margin-top: 20px;
-  margin-left: auto;
+  margin-left: 73.5%;
   margin-right: auto;
   display: flex;
 }
@@ -595,8 +595,7 @@ figcaption {
     outline: 1px solid #fff;
     justify-content: center;
     margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 70%;
     display: flex;
 
 }

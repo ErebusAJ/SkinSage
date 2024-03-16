@@ -280,7 +280,7 @@
         }
 
         h1 {
-            background-image: url("{% static 'skin_app/aa7.jpg'%}");
+            background-image: url("{% static 'skin_app/aa6.jpg'%}");
             background-repeat: repeat;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -324,6 +324,219 @@
         .card:hover .card-description {
             transform: translateY(100%);
         }
+        :root {
+    --scrollcolor: #ffffff;
+    --scrollbackground: #b3c8cf;
+}
+
+
+.title {
+    font-size: 2.5rem;
+    font-family: system-ui;
+    line-height: 1.1;
+    font-weight: 300;
+    color: #fff;
+    margin: 4rem auto 1rem;
+    width: 85%;
+    max-width: 1280px;
+}
+
+.slider {
+    width: 85%;
+    max-width: 1280px;
+
+
+    margin: 0 auto;
+}
+
+.slider__content {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    height: calc(100vh - 150px);
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollcolor) var(--scrollbackground);
+}
+
+.slider__content::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 2rem;
+    background: var(--scrollbackground);
+    display: none;
+}
+
+
+.slider__content::-webkit-scrollbar-thumb {
+
+    background: var(--scrollcolor);
+    background-color: var(--scrollcolor);
+    border-radius: 10px;
+}
+
+.slider__content::-webkit-scrollbar-track {
+    border-radius: 1rem;
+    background: var(--scrollbackground);
+    background-color: var(--scrollbackground);
+}
+
+.slider__item {
+    scroll-snap-align: start;
+    width: 100%;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1;
+}
+
+@media (min-width: 460px) {
+    .slider__item {
+        aspect-ratio: 0.6666666667;
+        min-width: calc((100% / 2) - 2rem);
+    }
+}
+
+@media (min-width: 940px) {
+    .slider__item {
+        min-width: calc((100% / 3) - 4rem);
+    }
+}
+
+.slider__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slider__info {
+    position: relative;
+    padding: 3rem 1.5rem;
+    /* Adjust padding as needed */
+    background: linear-gradient(to top, #68caff, #096079);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    /* Adjust height to account for padding */
+    overflow: hidden;
+}
+
+.slider__info h2 {
+    color: #fff;
+    font-family: system-ui;
+    line-height: 1.1;
+    font-weight: 300;
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.slider__info h3 {
+    color: #fff;
+    font-family: system-ui;
+    line-height: 1.1;
+    font-weight: 300;
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.slider__info h3.heading-13 {
+    color: #fff;
+    font-family: system-ui;
+    line-height: 1.1;
+    font-weight: 300;
+    font-size: 1.75rem;
+    margin: 0;
+    /* Remove margin */
+    padding-bottom: 1rem;
+    /* Add padding-bottom */
+}
+
+.slider__info h6 {
+    color: #fff;
+    font-family: system-ui;
+    font-size: 1rem;
+    /* Adjust font size as needed */
+    font-weight: 400;
+    /* Adjust font weight as needed */
+    line-height: 1.5;
+    /* Adjust line height as needed */
+    margin-top: 1rem;
+    /* Add margin top for spacing */
+}
+
+.slider__nav {
+    margin: 1rem 0 4rem;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.image-6 {
+    width: 470px;
+    height: 250px;
+    margin-left: -80px;
+
+}
+
+.heading-15 {
+    margin-top: 20px;
+}
+
+.image-7 {
+    width: 320px;
+    height: 270px;
+    margin-left: -4px;
+    margin-top: -10px;
+
+}
+
+.image-8 {
+    width: 320px;
+    height: 250px;
+    margin-left: -10px;
+
+}
+
+
+
+@media (min-width: 460px) {
+    .slider__nav {
+        justify-content: flex-end;
+    }
+}
+
+.slider__nav__button {
+    margin: 0;
+    appearance: none;
+    border: 0;
+    border-radius: 2rem;
+    background: #fff;
+    color: #203239;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    pointer-events: none;
+    transition: 0.2s ease-out;
+    opacity: 0.25;
+}
+
+.slider__nav__button--active {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
     </style>
 </head>
 
@@ -407,37 +620,111 @@
 
     </div>
 </div>
-    <section id="slider" class="section-5">
-            <input type="radio" name="slider" id="s1">
-            <input type="radio" name="slider" id="s2">
-            <input type="radio" name="slider" id="s3" checked>
-            <input type="radio" name="slider" id="s4">
-            <input type="radio" name="slider" id="s5">
-            <label for="s1" id="slide1"><img src="{% static 'skin_app/contact/Diagnose.png' %}"></label>
-            <label for="s2" id="slide2"><img src="{% static 'skin_app/contact/med.png' %}"></label>
-            <label for="s3" id="slide3"><img src="{% static 'skin_app/contact/precaution.png' %}"></label>
-            <label for="s4" id="slide4"><img src="{% static 'skin_app/contact/app.png' %}"></label>
-            <label for="s5" id="slide5"><img src="{% static 'skin_app/contact/Cure.png' %}"></label>
+    <div class="slider" x-data="{start: true, end: false}" style="padding-top: 150px;">
+        <div class="slider__content" x-ref="slider"
+            x-on:scroll.debounce="$refs.slider.scrollLeft == 0 ? start = true : start = false; Math.abs(($refs.slider.scrollWidth - $refs.slider.offsetWidth) - $refs.slider.scrollLeft) < 5 ? end = true : end = false;">
+            <div class="slider__item">
 
-    </section>
+                <div class="slider__info">
+                    <h3>
+                        <div id="w-node-_1e7a0543-b416-93b6-8c0a-6db11165f4c9-5028bc7e" class="w-layout-cell cell-3">
+                            <img src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2).png"
+                                loading="lazy" sizes="(max-width: 479px) 100vw, 250px"
+                                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-800.png 800w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-1080.png 1080w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-1600.png 1600w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-2000.png 2000w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-2600.png 2600w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2).png 3000w"
+                                alt="" class="image-8">
+                            <h3 class="heading-13">Cure</h3>
+                            <h6 class="heading-16">SkinSage is dedicated to providing effective cures for various skin
+                                conditions, leveraging advanced medical interventions and personalized treatment plans.
+                                Our
+                                expert dermatologists focus on delivering targeted solutions to address specific
+                                concerns and
+                                promote lasting skin health.</h6>
+                        </div>
+                    </h3>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="slider__info">
+                    <h3>
+                        <div id="w-node-_52442f32-5d87-6ce4-44ca-aa023abecdf5-5028bc7e" class="w-layout-cell cell-2">
+                            <img src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7b5f2b5268cc0494c27_output-onlinepngtools.png"
+                                loading="lazy" alt="" class="image-7">
+                            <h3 class="heading-13">Precautions</h3>
+                            <h6 class="heading-15">At SkinSage, we advocate for proactive skincare by emphasizing the
+                                importance
+                                of preventive measures. Our tailored consultations include educating patients on sun
+                                protection,
+                                skincare routines, and lifestyle choices to prevent skin issues by maintaining radiant
+                                skin.
+                            </h6>
+                        </div>
+                    </h3>
+                </div>
+            </div>
+            <div class="slider__item">
+
+                <div class="slider__info">
+                    <h3>
+                        <div id="w-node-c7adc6ac-03ee-74f7-64c8-d11f0efdcac0-5028bc7e" class="w-layout-cell cell"><img
+                                src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png"
+                                loading="lazy" sizes="(max-width: 600px) 100vw, 600px"
+                                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1)-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png 600w"
+                                alt="" class="image-6">
+                            <h3 class="heading-13">Diagnose</h3>
+                            <h6 class="heading-14">SkinSage, a leading healthcare company, prioritizes accurate and
+                                thorough
+                                diagnosis in dermatological care. Leveraging cutting-edge technology and expertise,
+                                SkinSage
+                                aims to precisely identify skin conditions, enabling personalized and effective
+                                treatment plans.</h6>
+                        </div>
+                    </h3>
+                </div>
+            </div>
+            <div class="slider__item">
+
+                <div class="slider__info">
+                    <h3>
+                        <div id="w-node-c7adc6ac-03ee-74f7-64c8-d11f0efdcac0-5028bc7e" class="w-layout-cell cell"><img
+                                src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png"
+                                loading="lazy" sizes="(max-width: 600px) 100vw, 600px"
+                                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1)-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png 600w"
+                                alt="" class="image-6">
+                            <h3 class="heading-13">Medication</h3>
+                            <h6 class="heading-14">SkinSage, a prominent healthcare organization, places paramount
+                                importance on precise and comprehensive diagnoses in
+                                dermatological care. Utilizing state-of-the-art technology and specialized knowledge,
+                                SkinSage strives to accurately
+                                pinpoint skin conditions and give efficient treatment strategies.</h6>
+                        </div>
+                    </h3>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="slider__info">
+                    <h3>
+                        <div id="w-node-c7adc6ac-03ee-74f7-64c8-d11f0efdcac0-5028bc7e" class="w-layout-cell cell"><img
+                                src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png"
+                                loading="lazy" sizes="(max-width: 600px) 100vw, 600px"
+                                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1)-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png 600w"
+                                alt="" class="image-6">
+                            <h3 class="heading-13">Appointment</h3>
+                            <h6 class="heading-14">SkinSage, a leading healthcare provider, is committed to seamless
+                                appointment booking for dermatological care.
+                                Harnessing advanced technology and expertise, SkinSage ensures efficient scheduling,
+                                allowing patients to conveniently
+                                book appointments for personalized consultations.</h6>
+                        </div>
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.2/cdn.js"></script>
     <script>
-    const slides = document.querySelectorAll("input[name='slider']");
-    let currentIndex = 0; // Initialize the current slide index
 
-    // Function to show the next slide
-    function showNextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].checked = true;
-        toggleArrows(slides[currentIndex]);
-    }
-
-    // Set interval to change slides every 3 seconds
-    const intervalId = setInterval(showNextSlide, 5000);
-
-    // Stop interval when user interacts with the slider
-    document.getElementById('slider').addEventListener('click', function() {
-        clearInterval(intervalId);
-    });
 
     const prevButton = document.getElementById("prev");
     const nextButton = document.getElementById("next");

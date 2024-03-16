@@ -75,7 +75,10 @@
             flex-wrap: wrap;
             justify-content: space-evenly;
             padding: 20px;
-            padding-left: 200px;
+            margin-left: 120px;
+            margin-right: 10px;
+            height: 380px;
+            size: fixed;
         }
 
         .news-card {
@@ -134,16 +137,19 @@
             padding: 5px;
             width: 100px;
         }
+        .filter{
+            margin-top: -60px;
+        }
     </style>
 <body>
 <br><br><br><br><br>
     <h1 class="heading-3">Doctors</h1>
-    <form method="post" action="{% url 'doctor' %}" style="margin-left:90%;">
+    <form class="filter" method="post" action="{% url 'doctor' %}" style="margin-left:90%;">
         {% csrf_token %}
         {{ location_form.as_p }}
         <button type="submit" class="sad-1">Filter Doctors</button>
     </form>
-    {% for doctor in doctors    %}
+    {% for doctor in doctors %}
     <div id="newsContainer" class="newsstand">
         <div class="news-card">
             <img class="news-image" src="{{ doctor.image.url }}">

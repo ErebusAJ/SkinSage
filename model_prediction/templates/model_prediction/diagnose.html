@@ -25,6 +25,254 @@
             margin-bottom: 20px; /* Adjust margin as needed */
             width: 100%;
         }
+        .container {
+            font-size: 30px;
+            font-family: 'Red Hat Display', sans-serif;
+            letter-spacing: 1.5px;
+            position: absolute;
+            top: 10%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 40px;
+            margin-left: 100px;
+        }
+
+        .container * {
+            display: inline-block;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .bar {
+            width: 3px;
+            height: 49px;
+            position: absolute;
+            top: -1px;
+        }
+
+
+
+        /* Style the button */
+        button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            margin-left: 100px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+
+
+
+        .container {
+            font-size: 40px;
+            font-family: 'Red Hat Display', sans-serif;
+            letter-spacing: 1.5px;
+            position: absolute;
+            margin-top: 30px;
+            margin-left: 325px;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: 50px;
+        }
+
+        .container * {
+            display: inline-block;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .bar {
+            width: 3px;
+            height: 49px;
+            position: absolute;
+            top: -1px;
+        }
+        .ocrloader p::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #68caff;
+            position: relative;
+            right: 4px;
+        }
+
+        .ocrloader p {
+            color: #68caff;
+            position: absolute;
+            bottom: -30px;
+            left: 38%;
+            font-size: 16px;
+            font-weight: 600;
+            animation: blinker 1.5s linear infinite;
+            font-family: sans-serif;
+            text-transform: uppercase;
+        }
+
+        .ocrloader {
+            width: 200px;
+            height: 120px;
+            position: absolute;
+            left: 58%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            top: 65%;
+            backface-visibility: hidden;
+            overflow: hidden;
+            margin-top: -40px;
+            margin-top: -180px;
+            margin-left: -5px;
+        }
+
+        .ocrloader span {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            width: 85%;
+            height: 4px;
+            background-color: #68caff;
+            box-shadow: 0 0 10px 1px #68caff,
+                0 0 1px 1px #68caff;
+            z-index: 1;
+            transform: translateY(95px);
+            animation: move 1.7s cubic-bezier(0.15, 0.54, 0.76, 0.74);
+            animation-iteration-count: infinite;
+        }
+
+        .ocrloader:before,
+        .ocrloader:after,
+        .ocrloader em:after,
+        .ocrloader em:before {
+            border-color: #68caff;
+            content: "";
+            position: absolute;
+            width: 45px;
+            height: 46px;
+            border-style: solid;
+            border-width: 0px;
+        }
+
+        .ocrloader:before {
+            left: 0;
+            top: 0;
+            border-left-width: 5px;
+            border-top-width: 5px;
+            border-radius: 5px 0 0 0;
+        }
+
+        .ocrloader:after {
+            right: 0;
+            top: 0;
+            border-right-width: 5px;
+            border-top-width: 5px;
+            border-radius: 0 5px 0 0;
+        }
+
+        .ocrloader em:before {
+            left: 0;
+            bottom: 0;
+            border-left-width: 5px;
+            border-bottom-width: 5px;
+            border-radius: 0 0 0 5px;
+        }
+
+        .ocrloader em:after {
+            right: 0;
+            bottom: 0;
+            border-right-width: 5px;
+            border-bottom-width: 5px;
+            border-radius: 0 0 5px 0;
+        }
+
+        @keyframes move {
+
+            0%,
+            100% {
+                transform: translateY(190px);
+            }
+
+            50% {
+                transform: translateY(0%);
+            }
+
+            75% {
+                transform: translateY(160px);
+            }
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* === removing default button style ===*/
+        .ss {
+            margin-left: 90rem;
+            height: auto;
+            background: transparent;
+            padding: 0;
+            margin-top: -70px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* button styling */
+        .ss {
+            --border-right: 6px;
+            --text-stroke-color: rgba(0, 0, 0, 0.6);
+            --animation-color: #37FF8B;
+            --fs-size: 2em;
+            letter-spacing: 3px;
+            text-decoration: none;
+            font-size: var(--fs-size);
+            font-family: "Arial";
+            position: relative;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--text-stroke-color);
+        }
+
+        /* this is the text, when you hover on button */
+        .ss .hover-text {
+            position: absolute;
+            box-sizing: border-box;
+            content: attr(data-text);
+            color: var(--animation-color);
+            width: 0%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-right: var(--border-right) solid var(--animation-color);
+            overflow: hidden;
+            transition: width 0.5s;
+            -webkit-text-stroke: 1px var(--animation-color);
+        }
+
+        /* hover */
+        .ss:hover .hover-text {
+            width: 100%;
+            filter: drop-shadow(0 0 23px var(--animation-color));
+        }
+        .ggs img {
+            width: 600px;
+            height: 300px;
+            margin-top: -22%
+        }
+
+        .ggs {
+            margin-left: 1rem;
+        }
     </style>
 </head>
 <br><br><br><br>
@@ -36,10 +284,13 @@
         <input class="button-5 w-button" type="submit" value="Classify">
     </form>
 </section>
-<br><br>
-<section class="section-12">
-    <h2 class="heading-9">Your personal dermatologist.</h2>
-</section>
+    <div class="ocrloader">
+        <p>Scanning</p>
+        <em></em>
+        <span></span>
+    </div>
+    <img src="{% static 'model_prediction/man.png' %}" class="ggs">
+
 
 <!-- Add new container for cards -->
 <br><br><br><br>
