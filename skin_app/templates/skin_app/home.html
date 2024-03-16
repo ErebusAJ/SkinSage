@@ -249,6 +249,81 @@
             height: 600px;
 
         }
+        .card {
+        height: 500px;
+        width: 1300px;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-top: 60px;
+        margin-left: 120px;
+        margin-right: 40px;
+        margin-bottom: 60px;
+        }
+
+        /*Image*/
+        .card-image {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+            background: #0a3394;
+            background: linear-gradient(to top, #010920, #68caff);
+        }
+
+        .card-image h1 {
+            font-weight: bold;
+            font-size: 60px;
+            margin-left: 90px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            background-image: url("{% static 'skin_app/aa7.jpg'%}");
+            background-repeat: repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /*Description */
+        .card-description {
+            display: flex;
+            position: absolute;
+            gap: .5em;
+            flex-direction: column;
+            background-image: url("{% static 'skin_app/aa6.jpg'%}");
+            background-size: cover;
+            color: transparent;
+            height: 80%;
+            width: 100%;
+            bottom: 0;
+            border-radius: 16px;
+            transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+            padding: 1rem;
+        }
+
+        /*Text*/
+        .text-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .text-body {
+            font-size: 1.1rem;
+            line-height: 130%;
+            margin-top: 100px;
+            font-weight: 500;
+            margin: 5px;
+            padding: 20px;
+            color: #fff
+        }
+
+
+        /* Hover states */
+        .card:hover .card-description {
+            transform: translateY(100%);
+        }
     </style>
 </head>
 
@@ -297,18 +372,41 @@
         </div>
         </div>
     </section>
-    <section class="section-3">
-        <div class="w-layout-blockcontainer container-2 w-container">
-            <h1 class="heading"><strong class="bold-text-2">INSIGHTS INTO OUR ORGANIZATION</strong></h1>
-            <h1 class="heading">Welcome to SkinSage, where cutting-edge innovation intersects with compassionate
-                outreach. Our mission is to alleviate healthcare disparities by utilizing state-of-the-art technology to
-                detect skin diseases through a basic camera interface, making dermatological care accessible to
-                underprivileged villagers. At SkinSage, we are steadfast in our commitment to ensuring equitable access
-                to high-quality healthcare, fostering resilient communities and cultivating a future where health
-                inequalities are eliminated. Join us in our efforts to cultivate a world where well-being flourishes for
-                all.</h1>
-        </div>
-    </section>
+    <div class="card">
+    <div class="card-image">
+        <h1>INSIGHTS INTO OUR ORGANIZATION</h1>
+        <p class="text-body"><b>SkinSage: Bridging Healthcare Gaps through Innovation and Compassion</b><br>
+
+            In the realm where cutting-edge innovation meets compassionate outreach, SkinSage stands as a beacon of hope
+            and
+            progress. At the heart of SkinSage lies a profound mission: to alleviate healthcare disparities through the
+            power of
+            technology and empathy. Founded on the belief that everyone deserves access to quality healthcare,
+            regardless of their
+            socioeconomic status or geographical location, SkinSage is dedicated to democratizing dermatological care
+            and
+            transforming lives one pixel at a time.<br><br>
+
+            <b>The Genesis of SkinSage</b><br>
+
+            The story of SkinSage begins with a shared vision among a group of passionate individuals who recognized the
+            glaring
+            inequities in healthcare access, particularly in the field of dermatology. In many underserved communities
+            around the
+            world, accessing specialized medical care for skin conditions remains a distant dream, often due to a lack
+            of resources,
+            infrastructure, or trained professionals. Skin disorders, ranging from common conditions like acne and
+            eczema to more
+            serious ailments such as skin cancer, can have profound impacts on individuals' physical health,
+            self-esteem, and
+            overall quality of life.<br><br>
+        </p>
+    </div>
+    <div class="card-description">
+        <p class="text-title"></p>
+
+    </div>
+</div>
     <section id="slider" class="section-5">
             <input type="radio" name="slider" id="s1">
             <input type="radio" name="slider" id="s2">
