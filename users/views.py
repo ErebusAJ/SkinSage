@@ -3,6 +3,7 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, Appointm
 from .models import Appointment, Doctor
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db import IntegrityError
 
 
 def register(request):
@@ -69,7 +70,6 @@ def select_doctor(request):
     return render(request, 'users/doctor.html', {'doctors': doctors, 'location_form': location_form, 'doctor_form': doctor_form})
 
 
-@login_required
 def book_appointment(request):
     doctor_id = request.GET.get('doctor_id')
     if doctor_id:
@@ -84,10 +84,14 @@ def book_appointment(request):
         if form.is_valid():
             appointment = form.save(commit=False)
             appointment.user = request.user
-            appointment.doctor = doctor  # Assign the selected doctor to the appointment
-            appointment.save()
-            messages.success(request, f'Your appointment has been booked')
-            return redirect('profile')
+            if doctor:
+                appointment.doctor = doctor  # Assign the selected doctor to the appointment
+            try:
+                appointment.save()
+                messages.success(request, f'Your appointment has been booked')
+                return redirect('profile')
+            except IntegrityError as e:
+                messages.error(request, f'Error: {e}')
     else:
         form = AppointmentForm(initial={'doctor': doctor})  # Pass the doctor as initial data to the form
 

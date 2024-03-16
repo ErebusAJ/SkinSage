@@ -36,8 +36,14 @@ class DoctorForm(forms.Form):
 
 class AppointmentForm(forms.ModelForm):
     Disease_choices = [
-        ('disease1', 'Disease 1'),
-        ('disease2', 'Disease 2'),
+        ('disease1', 'Acne and Rosacea Photos'),
+        ('disease2', 'Actinic Keratosis Basal Cell Carcinoma and other MalignantLesions'),
+        ('disease3', 'Atopic Dermatitis Photos'),
+        ('disease4', 'Bullous Disease Photos'),
+        ('disease5', 'Cellulitis Impetigo and other Bacterial Infections'),
+        ('disease6', 'Eczema Photos'),
+        ('disease7', 'Exanthems and Drug Eruptions'),
+        ('disease8', 'Hair Loss Photos Alopecia and other Hair Diseases'),
     ]
 
     disease = forms.ChoiceField(choices=Disease_choices)
