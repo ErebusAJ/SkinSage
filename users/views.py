@@ -84,11 +84,12 @@ def book_appointment(request):
         if form.is_valid():
             appointment = form.save(commit=False)
             appointment.user = request.user
+            appointment.doctor = doctor  # Assign the selected doctor to the appointment
             appointment.save()
             messages.success(request, f'Your appointment has been booked')
             return redirect('profile')
     else:
-        form = AppointmentForm()
+        form = AppointmentForm(initial={'doctor': doctor})  # Pass the doctor as initial data to the form
 
     return render(request, 'users/booking.html', {'form': form, 'available_time_slots': time_slots, 'doctor': doctor})
 

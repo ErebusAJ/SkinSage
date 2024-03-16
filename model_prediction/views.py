@@ -54,6 +54,6 @@ def model_predictor(request):
                 predicted_class = torch.argmax(probabilities).item()
                 print(predicted_class)
 
-            return render(request, 'model_prediction/result.html',  {'result': 9})
+            return render(request, 'model_prediction/result.html',  {'result': predicted_class})
 
 
