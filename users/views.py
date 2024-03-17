@@ -77,7 +77,8 @@ def book_appointment(request):
     else:
         doctor = None
     time_slots = [
-        '11:00', '12:00', '3:00', '4:00', '5:00'
+        '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '14:00',
+        '14:30', '15:00', '15:30', '16:00', '16:30', '17:00',
     ]
     if request.method == 'POST':
         form = AppointmentForm(request.POST)

@@ -78,6 +78,12 @@
 
         }
 
+        .multilingual{
+            height: 5px;
+            width: 5px;
+            margin-top: 350px;
+        }
+
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
@@ -356,9 +362,9 @@
     gap: 1rem;
     padding-bottom: 1rem;
     height: calc(100vh - 150px);
-
     scrollbar-width: thin;
     scrollbar-color: var(--scrollcolor) var(--scrollbackground);
+    margin-top: -120px;
 }
 
 .slider__content::-webkit-scrollbar {
@@ -390,6 +396,15 @@
     overflow: hidden;
     position: relative;
     aspect-ratio: 1;
+    padding:15px;
+}
+.slider__item img {
+    margin-top:-15px;
+    border-radius:10px;
+
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); /* Adjust shadow properties as needed */
+
 }
 
 @media (min-width: 460px) {
@@ -537,6 +552,7 @@
     pointer-events: auto;
     cursor: pointer;
 }
+
     </style>
 </head>
 
@@ -627,18 +643,8 @@
 
                 <div class="slider__info">
                     <h3>
-                        <div id="w-node-_1e7a0543-b416-93b6-8c0a-6db11165f4c9-5028bc7e" class="w-layout-cell cell-3">
-                            <img src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2).png"
-                                loading="lazy" sizes="(max-width: 479px) 100vw, 250px"
-                                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-800.png 800w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-1080.png 1080w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-1600.png 1600w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-2000.png 2000w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2)-p-2600.png 2600w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7c043c9a08674372e47_output-onlinepngtools%20(2).png 3000w"
-                                alt="" class="image-8">
-                            <h3 class="heading-13">Cure</h3>
-                            <h6 class="heading-16">SkinSage is dedicated to providing effective cures for various skin
-                                conditions, leveraging advanced medical interventions and personalized treatment plans.
-                                Our
-                                expert dermatologists focus on delivering targeted solutions to address specific
-                                concerns and
-                                promote lasting skin health.</h6>
+                        <div  class="w-layout-cell cell">
+                            <img src="{% static 'skin_app/slider/appn_ss.png' %}">
                         </div>
                     </h3>
                 </div>
@@ -646,17 +652,8 @@
             <div class="slider__item">
                 <div class="slider__info">
                     <h3>
-                        <div id="w-node-_52442f32-5d87-6ce4-44ca-aa023abecdf5-5028bc7e" class="w-layout-cell cell-2">
-                            <img src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b7b5f2b5268cc0494c27_output-onlinepngtools.png"
-                                loading="lazy" alt="" class="image-7">
-                            <h3 class="heading-13">Precautions</h3>
-                            <h6 class="heading-15">At SkinSage, we advocate for proactive skincare by emphasizing the
-                                importance
-                                of preventive measures. Our tailored consultations include educating patients on sun
-                                protection,
-                                skincare routines, and lifestyle choices to prevent skin issues by maintaining radiant
-                                skin.
-                            </h6>
+                        <div class="w-layout-cell cell">
+                            <img src="{% static 'skin_app/slider/cure_ss.png' %}">
                         </div>
                     </h3>
                 </div>
@@ -665,18 +662,8 @@
 
                 <div class="slider__info">
                     <h3>
-                        <div id="w-node-c7adc6ac-03ee-74f7-64c8-d11f0efdcac0-5028bc7e" class="w-layout-cell cell"><img
-                                src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png"
-                                loading="lazy" sizes="(max-width: 600px) 100vw, 600px"
-                                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1)-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png 600w"
-                                alt="" class="image-6">
-                            <h3 class="heading-13">Diagnose</h3>
-                            <h6 class="heading-14">SkinSage, a leading healthcare company, prioritizes accurate and
-                                thorough
-                                diagnosis in dermatological care. Leveraging cutting-edge technology and expertise,
-                                SkinSage
-                                aims to precisely identify skin conditions, enabling personalized and effective
-                                treatment plans.</h6>
+                        <div  class="w-layout-cell cell"><img
+                                src="{% static 'skin_app/slider/diag_ss.png' %}">
                         </div>
                     </h3>
                 </div>
@@ -685,17 +672,9 @@
 
                 <div class="slider__info">
                     <h3>
-                        <div id="w-node-c7adc6ac-03ee-74f7-64c8-d11f0efdcac0-5028bc7e" class="w-layout-cell cell"><img
-                                src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png"
-                                loading="lazy" sizes="(max-width: 600px) 100vw, 600px"
-                                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1)-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png 600w"
-                                alt="" class="image-6">
-                            <h3 class="heading-13">Medication</h3>
-                            <h6 class="heading-14">SkinSage, a prominent healthcare organization, places paramount
-                                importance on precise and comprehensive diagnoses in
-                                dermatological care. Utilizing state-of-the-art technology and specialized knowledge,
-                                SkinSage strives to accurately
-                                pinpoint skin conditions and give efficient treatment strategies.</h6>
+                        <div  class="w-layout-cell cell"><img
+                                src="{% static 'skin_app/slider/medi_ss.png' %}">
+
                         </div>
                     </h3>
                 </div>
@@ -703,17 +682,8 @@
             <div class="slider__item">
                 <div class="slider__info">
                     <h3>
-                        <div id="w-node-c7adc6ac-03ee-74f7-64c8-d11f0efdcac0-5028bc7e" class="w-layout-cell cell"><img
-                                src="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png"
-                                loading="lazy" sizes="(max-width: 600px) 100vw, 600px"
-                                srcset="https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1)-p-500.png 500w, https://assets-global.website-files.com/65d59ebc1d3088545028bc49/65d8b805c4692c5ead082035_output-onlinepngtools%20(1).png 600w"
-                                alt="" class="image-6">
-                            <h3 class="heading-13">Appointment</h3>
-                            <h6 class="heading-14">SkinSage, a leading healthcare provider, is committed to seamless
-                                appointment booking for dermatological care.
-                                Harnessing advanced technology and expertise, SkinSage ensures efficient scheduling,
-                                allowing patients to conveniently
-                                book appointments for personalized consultations.</h6>
+                        <div  class="w-layout-cell cell"><img
+                                src="{% static 'skin_app/slider/pre_ss.png' %}">
                         </div>
                     </h3>
                 </div>

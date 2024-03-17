@@ -20,14 +20,11 @@ num_classes = 8  # Adjust this based on the number of classes in your dataset
 model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
 
 # Load the saved model state dictionary
-checkpoint = torch.load(r'model_prediction/static/model_prediction/highacc.pth', map_location=torch.device('cpu'))
+checkpoint_path = r'D:\Sample\SkinLife\model_prediction\static\model_prediction\highacc.pth'
+checkpoint = torch.load(checkpoint_path, map_location=torch.device('cpu'))
+model.load_state_dict(checkpoint['model_state_dict'])
 
-# Filter out unnecessary keys
-model_state_dict = {k: v for k, v in checkpoint.items() if k in model.state_dict()}
-
-# Load the filtered state dictionary into the model
-model.load_state_dict(model_state_dict, strict=False)
-
+# Set the model to evaluation mode
 model.eval()
 
 # Define the transformation for the input image
@@ -36,7 +33,6 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
 ])
-
 def model_predictor(request):
     if request.method == 'POST':
         image_file = request.FILES.get('image')
@@ -47,19 +43,16 @@ def model_predictor(request):
             image_tensor = transform(image).unsqueeze(0)  # Add batch dimension
 
             # Move the model to the same device as the input tensor
-            device = torch.device('cpu')
+            device = torch.device('cpu')  # Use CPU for inference
             model.to(device)
             image_tensor = image_tensor.to(device)
 
             # Use the model to predict the class
             with torch.no_grad():
                 output = model(image_tensor)
-            probabilities = torch.softmax(output, dim=1)[0]  # Convert to probabilities
-            predicted_class = torch.argmax(output, dim=1).item()
+                probabilities = torch.softmax(output, dim=1)[0]  # Convert to probabilities
+                predicted_class = torch.argmax(output, dim=1).item()
 
-            # Print the predicted class and probabilities
-            print(f"Predicted class: {predicted_class}")
+            return render(request, 'model_prediction/result.html', {'result': predicted_class})
 
-            return render(request, 'model_prediction/result.html',  {'result': predicted_class})
-
-
+    return render(request, 'model_prediction/diagnose.html')

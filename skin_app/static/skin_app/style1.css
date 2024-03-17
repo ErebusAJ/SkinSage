@@ -2698,6 +2698,8 @@ figcaption {
 }
 
 .footer-wrap {
+    position:absolute
+    bottom:0;
     justify-content: center;
     align-items: center;
     padding-top: 70px;
